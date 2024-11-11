@@ -1,10 +1,10 @@
-// Функция для переключения темы
+
 function toggleTheme() {
     const body = document.body;
     body.classList.toggle("light-theme");
     body.classList.toggle("dark-theme");
 }
-// Массив текстов для "набора" и переменные для настройки эффекта
+
 const typedTexts = ["Веб-разработчик", "Создатель игр", "Творец сея страница"];
 let currentTextIndex = 0;
 let currentCharIndex = 0;
@@ -43,10 +43,10 @@ window.addEventListener("scroll", () => {
     const scrollPercentage = (scrollAmount / pageHeight) * 100;
     progressBar.style.width = scrollPercentage + "%";
 });
-// Количество звезд
+
 const starCount = 100;
 
-// Создаем звезды и добавляем их в контейнер
+
 function createStars() {
     const container = document.querySelector(".stars-container");
 
@@ -54,8 +54,8 @@ function createStars() {
         const star = document.createElement("div");
         star.classList.add("star");
 
-        // Случайные размеры, позиции и анимации для каждой звезды
-        const size = Math.random() * 3 + 1 + "px"; // Размер от 1px до 4px
+        
+        const size = Math.random() * 3 + 1 + "px"; 
         star.style.width = size;
         star.style.height = size;
         star.style.top = Math.random() * 100 + "vh";

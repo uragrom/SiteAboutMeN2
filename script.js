@@ -66,5 +66,5 @@ function createStars() {
     }
 }
 
-// Вызываем функцию для создания звезд после загрузки страницы
+
 document.addEventListener("DOMContentLoaded", createStars);

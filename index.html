@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+
+    <!-- Переключатель темы -->
+    <button class="theme-toggle" onclick="toggleTheme()">Сменить тему</button>
+
+    <!-- Навигация -->
+    <header class="header" style="position: fixed;">
+        <div class="nav-container">
+            <a href="#home" class="logo">Мой сайт</a>
+            <nav class="nav-menu">
+                <a href="#about" class="nav-link">Обо мне</a>
+                <a href="#skills" class="nav-link">Навыки</a>
+                <a href="#portfolio" class="nav-link">Портфолио</a>
+                <a href="#testimonials" class="nav-link">Отзывы</a>
+                <a href="#contact" class="nav-link">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="progress-bar"></div>
+
+    <!-- Раздел "Главная" -->
+    <section id="home" class="section home-section">
+        <h1 class="animated-name">Привет, я Юра</h1>
+        <div class="typing-effect">
+            <span class="typed-text"></span><span class="cursor">|</span>
+        </div>
+    </section>
+
+    <!-- Раздел "Обо мне" -->
+    <section id="about" class="section about-section">
+        <h2>Обо мне</h2>
+        <p>Я начинающий веб разработчик, программирование - главное хобби. Так же люблю поиграть в игры . В особенности Doom, Hotline Miami, Minecraft, Fortnite, Call Of Duty Moder </p>
+    </section>
+
+    <div class="floating-shape shape1"></div>
+    <div class="floating-shape shape2"></div>
+    <div class="floating-shape shape3"></div>
+
+    <section class="section wave-section"></section>
+
+    <!-- Раздел "Навыки" -->
+    <section id="skills" class="section skills-section">
+        <h2>Навыки</h2>
+        <ul>
+            <li>HTML / CSS / JavaScript</li>
+            <li>Blender / Unity / Roblox Studio / Photoshop</li>
+            <li>C# / Java / Phyton / Lua</li>
+            <li>UI/UX Дизайн и Анимация</li>
+            <li>Базы данных (MySQL, MongoDB)</li>
+        </ul>
+    </section>
+
+
+    <!-- Раздел "Портфолио" -->
+    <section id="portfolio" class="section portfolio-section">
+        <h2>Портфолио</h2>
+        <p>Здесь вы найдете несколько примеров моих работ. <br> Но потом...</p>
+    </section>
+
+    <!-- Раздел "Отзывы" -->
+    <section id="testimonials" class="section testimonials-section">
+        <h2>Отзывы</h2>
+        <p>«Нормальный чувак, кайф вообще» - Какой-то бомж с улицы</p>
+    </section>
+
+    <!-- Раздел "Контакты" -->
+    <section id="contact" class="section contact-section">
+        <h2>Контакты</h2>
+        <p>Свяжитесь со мной по голубиной почте.</p>
+    </section>
+
+    <!-- Скрипт для смены темы -->
+    <script src="script.js" style="z-index: 9999;"></script>
+</body>
+</html>

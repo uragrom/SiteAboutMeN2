@@ -1,0 +1,238 @@
+
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 0;
+    background-color: #feb602;
+    z-index: 1000;
+}
+
+/* Курсор для эффекта набора текста */
+.cursor {
+    display: inline-block;
+    font-weight: bold;
+    animation: blink 0.7s infinite;
+}
+
+/* Эффект мигания курсора */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Стиль для текста, который будет "напечатан" */
+.typed-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Общие стили для плавающих фигур */
+.floating-shape {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.shape1 {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape2 {
+    width: 100px;
+    height: 100px;
+    top: 40%;
+    left: 75%;
+    animation-delay: 2s;
+}
+
+.shape3 {
+    width: 60px;
+    height: 60px;
+    top: 70%;
+    left: 35%;
+    animation-delay: 4s;
+}
+
+/* Анимация для плавающих фигур */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+
+/* При прокрутке создается ощущение, что фон движется медленнее, чем передний план. */
+.home-section {
+    background-image: url('background.jpg'); /* Замените на ваш фоновый рисунок */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+
+
+/* CSS-переменные для светлой и тёмной тем */
+:root {
+    --background-light: #f9f9f9;
+    --text-light: #333;
+    --background-dark: #1a1a1a;
+    --text-dark: #f5f5f5;
+    --accent-color: #feb602;
+    --transition-time: 0.5s;
+}
+
+/* Анимация для имени */
+.animated-name {
+    font-size: 3em;
+    font-weight: bold;
+    animation: colorFontChange 5s infinite;
+}
+
+/* Определение анимации */
+@keyframes colorFontChange {
+    0% {
+        color: #ff5733; /* Оранжевый */
+        font-family: Arial, sans-serif;
+    }
+    25% {
+        color: #33ff57; /* Зелёный */
+        font-family: "Times New Roman", serif;
+    }
+    50% {
+        color: #3357ff; /* Синий */
+        font-family: "Courier New", monospace;
+    }
+    75% {
+        color: #ff33a6; /* Розовый */
+        font-family: Georgia, serif;
+    }
+    100% {
+        color: #ff5733; /* Оранжевый (возвращается к началу) */
+        font-family: Arial, sans-serif;
+    }
+}
+
+/* Общие настройки */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: color var(--transition-time), background-color var(--transition-time);
+}
+
+body.light-theme {
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+body.dark-theme {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.section {
+    padding: 100px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+h1 {
+    color: var(--accent-color);
+}
+
+.home-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Навигация */
+.header {
+    width: 100%;
+    background-color: #000;
+    padding: 20px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    transition: color var(--transition-time);
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Кнопка для переключения темы */
+.theme-toggle {
+    position: fixed;
+    top: 80px;   /* Расположена чуть ниже строки "Обо мне" */
+    right: 20px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 1001;   /* Выше контента, но ниже строки "Обо мне" */
+    transition: background-color var(--transition-time);
+}
+
+/* Анимация */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+ 

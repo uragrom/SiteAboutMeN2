@@ -43,3 +43,28 @@ window.addEventListener("scroll", () => {
     const scrollPercentage = (scrollAmount / pageHeight) * 100;
     progressBar.style.width = scrollPercentage + "%";
 });
+// Количество звезд
+const starCount = 100;
+
+// Создаем звезды и добавляем их в контейнер
+function createStars() {
+    const container = document.querySelector(".stars-container");
+
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+
+        // Случайные размеры, позиции и анимации для каждой звезды
+        const size = Math.random() * 3 + 1 + "px"; // Размер от 1px до 4px
+        star.style.width = size;
+        star.style.height = size;
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDuration = Math.random() * 2 + 1 + "s";
+
+        container.appendChild(star);
+    }
+}
+
+// Вызываем функцию для создания звезд после загрузки страницы
+document.addEventListener("DOMContentLoaded", createStars);

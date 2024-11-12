@@ -8,24 +8,36 @@
 </head>
 <body class="light-theme">
 
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    
+
+
     <!-- Переключатель темы -->
     <button class="theme-toggle" onclick="toggleTheme()">Сменить тему</button>
 
     <!-- Навигация -->
-    <header class="header" style="position: fixed;">
-        <div class="nav-container">
-            <a href="#home" class="logo">Мой сайт</a>
-            <nav class="nav-menu">
-                <a href="#about" class="nav-link">Обо мне (включи тёмную тему)</a>
-                <a href="#skills" class="nav-link">Навыки</a>
-                <a href="#portfolio" class="nav-link">Портфолио</a>
-                <a href="#testimonials" class="nav-link">Отзывы</a>
-                <a href="#contact" class="nav-link">Контакты</a>
-            </nav>
-        </div>
-    </header>
+    <div class="fixed-bar">
+        <a href="#home" class="nav-link">Главная</a>
+        <a href="#about" class="nav-link">Обо мне</a>
+        <a href="#skills" class="nav-link">Навыки</a>
+        <a href="#portfolio" class="nav-link">Портфолио</a>
+        <a href="#contact" class="nav-link">Контакты</a>
+    </div>
 
     <div class="progress-bar"></div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <div class="fixed-bar">
+        <a href="#home" class="nav-link"><i class="fas fa-home"></i> Главная</a>
+        <a href="#about" class="nav-link"><i class="fas fa-user"></i> Обо мне</a>
+        <a href="#skills" class="nav-link"><i class="fas fa-cogs"></i> Навыки</a>
+        <a href="#portfolio" class="nav-link"><i class="fas fa-briefcase"></i> Портфолио</a>
+        <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Контакты</a>
+    </div>
+
 
     <!-- Раздел "Главная" -->
     <section id="home" class="section home-section">
@@ -35,24 +47,27 @@
         </div>
     </section>
 
+    
+
     <!-- Раздел "Обо мне" -->
     <section id="about" class="section about-section">
-        <h2>Обо мне</h2>
+        <h2 class="animated-gradient-text">Обо мне</h2>
         <p>Я начинающий веб разработчик, программирование - главное хобби. Так же люблю поиграть в игры . В особенности Doom, Hotline Miami, Minecraft, Fortnite, Call Of Duty Moder </p>
     </section>
 
     <div class="floating-shape shape1"></div>
     <div class="floating-shape shape2"></div>
     <div class="floating-shape shape3"></div>
-
+    
     <div class="stars-container"></div>
     <script src="stars.js"></script>
-    
+
+
     <section class="section wave-section"></section>
 
     <!-- Раздел "Навыки" -->
     <section id="skills" class="section skills-section">
-        <h2>Навыки</h2>
+        <h2 class="animated-gradient-text">Навыки</h2>
         <ul>
             <li>HTML / CSS / JavaScript</li>
             <li>Blender / Unity / Roblox Studio / Photoshop</li>
@@ -65,19 +80,19 @@
 
     <!-- Раздел "Портфолио" -->
     <section id="portfolio" class="section portfolio-section">
-        <h2>Портфолио</h2>
+        <h2 class="animated-gradient-text">Портфолио</h2>
         <p>Здесь вы найдете несколько примеров моих работ. <br> Но потом...</p>
     </section>
 
     <!-- Раздел "Отзывы" -->
     <section id="testimonials" class="section testimonials-section">
-        <h2>Отзывы</h2>
+        <h2 class="animated-gradient-text">Отзывы</h2>
         <p>«Нормальный чувак, кайф вообще» - Какой-то бомж с улицы</p>
     </section>
 
     <!-- Раздел "Контакты" -->
     <section id="contact" class="section contact-section">
-        <h2>Контакты</h2>
+        <h2 class="animated-gradient-text">Контакты</h2>
         <p>Свяжитесь со мной по голубиной почте.</p>
     </section>
 

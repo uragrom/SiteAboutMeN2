@@ -122,7 +122,7 @@
 
 .fixed-bar .nav-link:hover {
     color: #feb602;
-    z-index: 1001;
+    z-index: 9999;
 }
 
 
@@ -161,7 +161,7 @@
     height: 5px;
     width: 0;
     background-color: #feb602;
-    z-index: 1000;
+    z-index: 9999;
 }
 
 /* Курсор для эффекта набора текста */

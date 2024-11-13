@@ -1,3 +1,153 @@
+/* Основной адаптивный медиазапрос для экранов до 768px */
+@media (max-width: 768px) {
+    
+    /* Уменьшаем размеры для элементов с градиентом и текстовых анимаций */
+    .animated-gradient-text, .typed-text, .animated-name {
+        font-size: 1.8em; /* Уменьшение шрифта */
+        margin: 10px 0;
+    }
+
+    /* Прогресс-бар */
+    .progress-bar {
+        height: 3px;
+    }
+
+    /* Плавающие формы */
+    .floating-shape {
+        width: 40px;
+        height: 40px;
+        animation-delay: 1s; /* Уменьшенная задержка */
+    }
+
+    /* Плавающие иконки */
+    .floating-icons i {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.4); /* Слегка приглушенный цвет */
+    }
+
+    /* Кнопки и другие интерактивные элементы */
+    .theme-toggle, .scroll-to-top {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    /* Анимация мерцания звезд (уменьшение размера звезд) */
+    .star {
+        width: 2px;
+        height: 2px;
+    }
+
+    /* Уменьшаем высоту для прелоадера */
+    #preloader {
+        height: 100%;
+    }
+
+    /* Уменьшаем размеры для прелоадера */
+    .loader {
+        width: 30px;
+        height: 30px;
+        border-width: 4px;
+    }
+    
+    /* Фиксированная панель */
+    .fixed-bar {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .fixed-bar .nav-link {
+        font-size: 14px;
+        margin: 0 5px;
+    }
+}
+
+/* Медиазапрос для очень маленьких экранов (480px и меньше) */
+@media (max-width: 480px) {
+
+    /* Прогресс-бар */
+    .progress-bar {
+        height: 2px;
+    }
+
+    /* Заголовки и анимированный текст */
+    .animated-gradient-text, .typed-text, .animated-name {
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+
+    /* Кнопки и другие интерактивные элементы */
+    .theme-toggle, .scroll-to-top {
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+
+    /* Размеры плавающих фигур */
+    .floating-shape {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Плавающие иконки */
+    .floating-icons i {
+        font-size: 14px;
+    }
+
+    /* Анимация мерцания звезд (уменьшение размера звезд) */
+    .star {
+        width: 1.5px;
+        height: 1.5px;
+    }
+
+    /* Прелоадер */
+    #preloader .loader {
+        width: 25px;
+        height: 25px;
+        border-width: 3px;
+    }
+
+    /* Фиксированная панель */
+    .fixed-bar {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .fixed-bar .nav-link {
+        font-size: 12px;
+        margin: 0 3px;
+    }
+}
+
+/* Минимизация анимаций и других визуальных эффектов для очень маленьких экранов (320px и меньше) */
+@media (max-width: 320px) {
+    
+    /* Отключаем сложные эффекты для производительности */
+    .animated-gradient-text, .typed-text, .animated-name {
+        font-size: 1.2em;
+    }
+
+    .floating-shape, .floating-icons i, .star {
+        display: none; /* Убираем сложные элементы для повышения производительности */
+    }
+
+    /* Фиксированная панель и текст */
+    .fixed-bar {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .fixed-bar .nav-link {
+        font-size: 10px;
+        margin: 0 2px;
+    }
+
+    /* Упрощаем кнопку смены темы */
+    .theme-toggle {
+        font-size: 8px;
+        padding: 5px;
+    }
+}
+
+
 #alien-container {
     position: fixed;
     display: flex;

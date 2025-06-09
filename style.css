@@ -282,7 +282,7 @@
 .animated-gradient-text {
     font-size: 3em;
     font-weight: bold;
-    background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #1dd1a1, #ff6b6b);
+    background: linear-gradient(180deg, #ff6b6b, #feca57, #ff6b6b);
     background-size: 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -458,13 +458,14 @@
     font-size: 3em;
     font-weight: bold;
     animation: colorFontChange 8s infinite;
+    padding: 50px;    
 }
 
 /* Определение анимации */
 @keyframes colorFontChange {
     0% {
         color: #ff5733; /* Оранжевый */
-        font-family: "Great Vibes", cursive;
+        font-family: "Great Vibes", cursive;    
     }
     10% {
         color: #ffbe33; /* жёлтый */
@@ -616,3 +617,23 @@ h1 {
     }
 }
  
+.linkToAnother{
+    text-decoration: none;
+}
+
+.textAboutMe{
+
+    font-size: 20px;
+
+    font-weight: bold;
+    background: linear-gradient(180deg, #a1ff0a, #617e32, #a1ff0a);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    padding-top: 25px; 
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Горизонтальное центрирование */
+    align-items: center; /* Вертикальное центрирование */
+}

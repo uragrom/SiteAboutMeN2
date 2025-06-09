@@ -129,6 +129,21 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
+document.querySelectorAll('.fater').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
 window.addEventListener("load", () => {
     document.getElementById("preloader").style.display = "none";
 });

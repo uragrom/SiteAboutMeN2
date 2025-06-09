@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&display=swap');
 @media (max-width: 770px) {
     
     /* Уменьшаем размеры для элементов с градиентом и текстовых анимаций */
@@ -274,7 +275,9 @@
     }
 }
 
-
+.btnNavbtn{
+    color: #ffffff;
+}
 
 .animated-gradient-text {
     font-size: 3em;
@@ -454,30 +457,54 @@
 .animated-name {
     font-size: 3em;
     font-weight: bold;
-    animation: colorFontChange 5s infinite;
+    animation: colorFontChange 8s infinite;
 }
 
 /* Определение анимации */
 @keyframes colorFontChange {
     0% {
         color: #ff5733; /* Оранжевый */
-        font-family: Arial, sans-serif;
+        font-family: "Great Vibes", cursive;
     }
-    25% {
-        color: #33ff57; /* Зелёный */
+    10% {
+        color: #ffbe33; /* жёлтый */
         font-family: "Times New Roman", serif;
     }
-    50% {
+    20% {
+        color: #33ffaa; /* зелёный */
+        font-family:  "Oswald", sans-serif;
+    }
+    30% {
         color: #3357ff; /* Синий */
         font-family: "Courier New", monospace;
     }
-    75% {
-        color: #ff33a6; /* Розовый */
+    40% {
+        color: #33d6ff; /* берюзовый */
+        font-family: "Alumni Sans SC", sans-serif;
+    }
+    50% {
+        color: #9c33ff; /* фиолетовый */
         font-family: Georgia, serif;
+    }
+    60% {
+        color: #ff33cc; /* розовый */
+        font-family: "Pacifico", cursive;
+    }
+    70% {
+        color: #ff3355; /* красный*/
+        font-family: Arial, sans-serif;
+    }
+    80% {
+        color: rgb(206, 44, 79); /* бордовый */
+        font-family: "Caveat", cursive;
+    }
+    90% {
+        color: #bb6f3c; /* средний оранжевый */
+        font-family: "Rubik Gemstones", system-ui;
     }
     100% {
         color: #ff5733; /* Оранжевый (возвращается к началу) */
-        font-family: Arial, sans-serif;
+        font-family: "Great Vibes", cursive;
     }
 }
 

@@ -637,3 +637,13 @@ h1 {
     justify-content: center; /* Горизонтальное центрирование */
     align-items: center; /* Вертикальное центрирование */
 }
+.fater{
+    text-decoration: none;
+    color: #ffffff;
+
+}
+.fater:hover{
+    color: #feb602;
+    z-index: 9999;
+    text-decoration: none;
+}

@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylesPor.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+        }
+    </style>
 </head>
+
 <body class="dark-theme">
 
     <div id="preloader">
@@ -25,26 +33,84 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <div class="fixed-bar">
-       <a href="#home" class="fater"> <i  class="fas fa-home"  style="color: #ffffff;"></i> </a>
-        <a href="#home" class="nav-link">  Главная</a>
-       <a href="#best" class="fater"> <i  class="fa-solid fa-heart" style="color: #ffffff;"></i> </a>
+        <a href="#home" class="fater"> <i class="fas fa-home" style="color: #ffffff;"></i> </a>
+        <a href="#home" class="nav-link"> Главная</a>
+        <a href="#best" class="fater"> <i class="fa-solid fa-heart" style="color: #ffffff;"></i> </a>
         <a href="#best" class="nav-link"> Лучшие проекты</a>
 
-       <a href="#all" class="fater"> <i  class="fas fa-briefcase" style="color: #ffffff;"></i> </a>
+        <a href="#all" class="fater"> <i class="fas fa-briefcase" style="color: #ffffff;"></i> </a>
         <a href="#all" class="nav-link">Все работы</a>
-       <a href="#stars" class="fater"><i  class="fa-solid fa-star" style="color: #ffffff;"></i> </a>
+        <a href="#stars" class="fater"><i class="fa-solid fa-star" style="color: #ffffff;"></i> </a>
         <a href="#stars" class="nav-link">Оценить работы</a>
     </div>
 
-    <h2 id="#home" class="animated-gradient-text" style="padding-top: 50px; text-align: center; ">
+    <h2 id="#home"  class="animated-gradient-text" style="padding-top: 50px; text-align: center;  ">
         Мои работы:
     </h2>
-    <a class="textAboutMe" >
-         Всё чем я горжусь и готов показать!
+    <a class="textAboutMe">
+        Всё чем я горжусь и готов показать!
     </a>
+
+    <!-- Hero Section -->
+    <header id="home" class="py-5 flex-shrink-0 text-center">
+
+    </header>
+
+    <!-- Animation Features Section -->
+    <section id="features-animation">
+        <!-- Generate multiple windows with different delays and positions via JavaScript -->
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="large-container">
+            <div class="sec-title">
+
+            </div>
+
+            <div class="testimonial-carousel owl-carousel owl-theme">
+                <!-- Testimonial Block -->
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="text">
+                            Этот сайт является визиткой и портфолио, на нём вы можете найти множество моих работ.
+                        </div>
+                        <div class="info-box">
+                            <div class="thumb"><img src="YDG.png" alt=""></div>
+                            <h4 class="name">YDG</h4>
+                            <span class="designation">Создатель этого сайта</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Testimonial Block -->
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="text">
+                            Я являюсь участником ChainSaw team. Команды по созданию игр.
+                        </div>
+                        <div class="info-box">
+                            <div class="thumb"><img src="YDG.png" alt=""></div>
+                            <h4 class="name">YDG</h4>
+                            <span class="designation">Участник ChainSaw team</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="thumb-layer paroller">
+                <figure class="image"><img src="LogoBackPort1.png" style="width: 720px; height: 1000px;" alt="Тут должна была быть картинка..."></figure>
+            </div>
+        </div>
+    </section>
+    <!--End Testimonial Section -->
+
 
 
     <script src="script.js" style="z-index: 9999;"></script>
     <script src="https://kit.fontawesome.com/acbc009a72.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

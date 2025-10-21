@@ -178,6 +178,7 @@
             background-clip: text;
             text-shadow: 0 0 30px rgba(0, 255, 150, 0.5);
             animation: neonPulse 2s ease-in-out infinite;
+            z-index: 1001;
         }
 
         @keyframes neonPulse {
@@ -206,6 +207,37 @@
         .nav-links a:hover {
             color: #00ff88;
             text-shadow: 0 0 10px rgba(0, 255, 150, 0.8);
+        }
+
+        /* Мобильное меню */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: linear-gradient(135deg, #00ff88, #00ffff);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(9px, 9px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
         }
 
         /* Главный экран */
@@ -385,6 +417,80 @@
             color: #00ffff;
         }
 
+        /* Секция Tame Impala эффект */
+        .tame-section {
+            padding: 150px 50px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0033 0%, #2d1b4e 50%, #3d1e5f 100%);
+        }
+
+        .tame-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .tame-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tame-content h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, #ff00ff, #ff6ec7, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% auto;
+            animation: textFlow 4s linear infinite;
+            filter: drop-shadow(0 0 30px rgba(255, 0, 255, 0.6));
+        }
+
+        .tame-content p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            text-shadow: 0 0 20px rgba(255, 110, 199, 0.3);
+        }
+
+        /* Адаптивность для Tame секции */
+        @media (max-width: 768px) {
+            .tame-section {
+                padding: 100px 20px;
+            }
+
+            .tame-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .tame-content p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tame-section {
+                padding: 80px 20px;
+            }
+
+            .tame-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .tame-content p {
+                font-size: 1rem;
+            }
+        }
+
         /* Секция проектов */
         .projects {
             padding: 100px 50px;
@@ -406,6 +512,20 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-shadow: 0 0 40px rgba(0, 255, 150, 0.4);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #00ff88, transparent);
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(0, 255, 150, 0.8);
         }
 
         .projects-grid {
@@ -415,12 +535,12 @@
         }
 
         .project-card {
-            background: rgba(0, 255, 150, 0.02);
+            background: linear-gradient(135deg, rgba(0, 255, 150, 0.03), rgba(0, 255, 200, 0.01));
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 255, 150, 0.2);
-            border-radius: 20px;
-            padding: 35px;
-            transition: all 0.4s;
+            border: 2px solid rgba(0, 255, 150, 0.2);
+            border-radius: 25px;
+            padding: 40px;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
             overflow: hidden;
             cursor: pointer;
@@ -432,14 +552,33 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #00ff88, transparent);
-            animation: scanline 3s linear infinite;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #00ff88, #00ffff, transparent);
+            animation: scanline 4s linear infinite;
             opacity: 0;
+        }
+
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 255, 150, 0.15), transparent);
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease-out;
+            z-index: 0;
         }
 
         .project-card:hover::before {
             opacity: 1;
+        }
+
+        .project-card:hover::after {
+            width: 500px;
+            height: 500px;
         }
 
         @keyframes scanline {
@@ -452,84 +591,167 @@
         }
 
         .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            background: rgba(0, 255, 150, 0.05);
+            transform: translateY(-15px) scale(1.03);
+            background: linear-gradient(135deg, rgba(0, 255, 150, 0.08), rgba(0, 255, 200, 0.03));
             border-color: #00ff88;
-            box-shadow: 0 20px 60px rgba(0, 255, 150, 0.3);
+            box-shadow: 0 25px 80px rgba(0, 255, 150, 0.4);
+        }
+
+        .project-card > * {
+            position: relative;
+            z-index: 1;
         }
 
         .project-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #00ff88, #00ffff);
-            border-radius: 20px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #00ff88, #00ffff, #ffff00);
+            border-radius: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 25px;
-            font-size: 32px;
+            font-size: 36px;
             animation: iconFloat 3s ease-in-out infinite;
+            box-shadow: 0 10px 30px rgba(0, 255, 150, 0.3);
+            position: relative;
+        }
+
+        .project-icon::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #00ff88, #00ffff, #ffff00, #00ff88);
+            background-size: 300% 300%;
+            animation: gradientRotate 3s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: -1;
+        }
+
+        .project-card:hover .project-icon::before {
+            opacity: 1;
+        }
+
+        @keyframes gradientRotate {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         @keyframes iconFloat {
             0%, 100% {
-                transform: translateY(0);
+                transform: translateY(0) rotate(0deg);
             }
             50% {
-                transform: translateY(-5px);
+                transform: translateY(-8px) rotate(5deg);
             }
         }
 
         .project-card:hover .project-icon {
-            animation-duration: 1s;
+            animation: iconFloat 1s ease-in-out infinite, iconPulse 0.5s ease-in-out;
+            transform: scale(1.1);
+        }
+
+        @keyframes iconPulse {
+            0%, 100% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1.15);
+            }
         }
 
         .project-card h3 {
-            font-size: 26px;
+            font-size: 28px;
             margin-bottom: 15px;
             color: #fff;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover h3 {
+            color: #00ffff;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
         }
 
         .project-card p {
             color: rgba(255, 255, 255, 0.8);
-            line-height: 1.7;
+            line-height: 1.8;
             margin-bottom: 25px;
+            font-size: 15px;
         }
 
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .tag {
-            padding: 6px 16px;
-            background: rgba(0, 255, 150, 0.1);
-            border: 1px solid rgba(0, 255, 150, 0.3);
+            padding: 8px 18px;
+            background: rgba(0, 255, 150, 0.15);
+            border: 1px solid rgba(0, 255, 150, 0.4);
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 13px;
             color: #00ff88;
+            font-weight: 600;
             transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .project-card:hover .tag::before {
+            left: 100%;
         }
 
         .project-card:hover .tag {
-            background: rgba(0, 255, 150, 0.2);
+            background: rgba(0, 255, 150, 0.25);
+            border-color: #00ff88;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 150, 0.3);
         }
 
         .project-link {
             color: #00ffff;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 8px;
             transition: all 0.3s;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.3);
         }
 
         .project-link:hover {
-            gap: 12px;
+            gap: 15px;
             color: #ffff00;
+            background: rgba(255, 255, 0, 0.1);
+            border-color: #ffff00;
+            box-shadow: 0 5px 20px rgba(255, 255, 0, 0.3);
         }
 
         /* Секция контактов */
@@ -622,6 +844,14 @@
                 grid-template-columns: 1fr;
                 gap: 50px;
             }
+
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -630,39 +860,198 @@
             }
 
             .nav-links {
-                gap: 20px;
-                font-size: 14px;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 70%;
+                max-width: 300px;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(30px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                border-left: 2px solid rgba(0, 255, 150, 0.3);
+                box-shadow: -10px 0 50px rgba(0, 255, 150, 0.2);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 20px;
+                padding: 10px 20px;
+                width: 80%;
+                text-align: center;
+                border-radius: 10px;
+                transition: all 0.3s;
+            }
+
+            .nav-links a:hover {
+                background: rgba(0, 255, 150, 0.1);
+                transform: translateX(-5px);
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
             }
 
             .hero {
-                padding: 100px 20px 50px;
+                padding: 120px 20px 50px;
+                min-height: 90vh;
             }
 
             .hero h1 {
-                font-size: clamp(2rem, 8vw, 3.5rem);
+                font-size: clamp(2rem, 10vw, 3rem);
+                margin-bottom: 20px;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 40px;
             }
 
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 15px;
             }
 
             .cta-button {
                 width: 100%;
-                max-width: 300px;
+                max-width: 280px;
+                padding: 15px 40px;
+                font-size: 16px;
+            }
+
+            .about {
+                padding: 60px 20px;
+            }
+
+            .about-text h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .about-text p {
+                font-size: 15px;
+            }
+
+            .code-window {
+                padding: 15px;
+                font-size: 12px;
             }
 
             .projects {
-                padding: 80px 20px;
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 60px;
             }
 
             .projects-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 25px;
             }
 
-            .about, .contact {
-                padding: 80px 20px;
+            .project-card {
+                padding: 30px;
+            }
+
+            .project-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 30px;
+            }
+
+            .project-card h3 {
+                font-size: 24px;
+            }
+
+            .project-card p {
+                font-size: 14px;
+            }
+
+            .project-link {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            .contact {
+                padding: 60px 20px;
+            }
+
+            .contact h2 {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            /* Оптимизация анимаций для мобильных */
+            .cursor-glow {
+                display: none;
+            }
+
+            .project-card:hover {
+                transform: translateY(-8px) scale(1.01);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 20px;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.8rem, 12vw, 2.5rem);
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 15px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .project-card {
+                padding: 25px;
+            }
+
+            .project-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 26px;
+            }
+
+            .project-card h3 {
+                font-size: 22px;
+            }
+
+            .skills {
+                gap: 10px;
+            }
+
+            .skill-badge {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+
+            .nav-links {
+                width: 85%;
             }
         }
 
@@ -704,6 +1093,11 @@
     <nav>
         <div class="nav-container">
             <div class="logo">YDG.DEV</div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Главная</a></li>
                 <li><a href="#about">Обо мне</a></li>
@@ -763,6 +1157,15 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Секция Tame Impala эффект -->
+    <section class="tame-section">
+        <canvas class="tame-canvas" id="tameCanvas"></canvas>
+        <div class="tame-content">
+            <h2>Творчество в каждой строке кода</h2>
+            <p>Каждый проект — это уникальное путешествие, где технологии сливаются с искусством, создавая незабываемые цифровые впечатления</p>
         </div>
     </section>
 
@@ -853,7 +1256,7 @@
                 <div class="contact-item">
                     <div class="contact-icon">🐙</div>
                     <h3>GitHub</h3>
-                    <a href="#">/uragrom</a>
+                    <a href="https://github.com/uragrom">/uragrom</a>
                 </div>
 
             </div>
@@ -863,6 +1266,35 @@
     <!-- Footer -->
 
     <script>
+        // Мобильное меню
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksItems = document.querySelectorAll('.nav-links a');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Закрытие меню при клике на ссылку
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target) && navLinks.classList.contains('active')) {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
         // Эффект следования свечения за курсором
         const cursorGlow = document.querySelector('.cursor-glow');
         let mouseX = 0, mouseY = 0;
@@ -877,10 +1309,10 @@
         function animateCursor() {
             currentX += (mouseX - currentX) * 0.1;
             currentY += (mouseY - currentY) * 0.1;
-            
+
             cursorGlow.style.left = currentX + 'px';
             cursorGlow.style.top = currentY + 'px';
-            
+
             requestAnimationFrame(animateCursor);
         }
         animateCursor();
@@ -1005,16 +1437,141 @@
         // Запускаем вспышки каждые 5-10 секунд
         setInterval(randomAuroraFlash, 5000 + Math.random() * 5000);
 
+        // Tame Impala эффект волнистых линий
+        const tameCanvas = document.getElementById('tameCanvas');
+        if (tameCanvas) {
+            const ctx = tameCanvas.getContext('2d');
+
+            function resizeCanvas() {
+                tameCanvas.width = tameCanvas.offsetWidth;
+                tameCanvas.height = tameCanvas.offsetHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            class WaveLine {
+                constructor(baseY, frequency, amplitude, speed, color, strokeWidth) {
+                    this.baseY = baseY;
+                    this.frequency = frequency;
+                    this.amplitude = amplitude;
+                    this.speed = speed;
+                    this.color = color;
+                    this.strokeWidth = strokeWidth;
+                    this.offset = Math.random() * Math.PI * 2;
+                    this.time = 0;
+                }
+
+                update() {
+                    this.time += this.speed;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.strokeStyle = this.color;
+                    ctx.lineWidth = this.strokeWidth;
+
+                    for (let x = 0; x < tameCanvas.width; x += 2) {
+                        const normalizedX = x / tameCanvas.width;
+
+                        // Создаем сложные волны с несколькими частотами
+                        const wave1 = Math.sin(normalizedX * this.frequency + this.time + this.offset) * this.amplitude;
+                        const wave2 = Math.sin(normalizedX * this.frequency * 2 + this.time * 1.5) * (this.amplitude * 0.3);
+                        const wave3 = Math.cos(normalizedX * this.frequency * 0.5 - this.time * 0.8) * (this.amplitude * 0.5);
+
+                        // Добавляем искажение по краям
+                        const edgeDistortion = Math.sin(normalizedX * Math.PI) * 20;
+
+                        const y = this.baseY + wave1 + wave2 + wave3 + edgeDistortion;
+
+                        if (x === 0) {
+                            ctx.moveTo(x, y);
+                        } else {
+                            ctx.lineTo(x, y);
+                        }
+                    }
+
+                    ctx.stroke();
+                }
+            }
+
+            // Создаем массив волнистых линий в стиле Tame Impala
+            const waveLines = [];
+            const numberOfLines = 40;
+            const colors = [
+                'rgba(255, 0, 255, 0.4)',      // Яркий пурпурный
+                'rgba(255, 110, 199, 0.5)',    // Розовый
+                'rgba(138, 43, 226, 0.4)',     // Фиолетовый
+                'rgba(0, 255, 255, 0.3)',      // Циан
+                'rgba(255, 0, 127, 0.45)',     // Малиновый
+                'rgba(186, 85, 211, 0.4)',     // Сиреневый
+                'rgba(255, 20, 147, 0.35)',    // Насыщенный розовый
+            ];
+
+            for (let i = 0; i < numberOfLines; i++) {
+                const baseY = (tameCanvas.height / numberOfLines) * i + 50;
+                const frequency = 3 + Math.random() * 4;
+                const amplitude = 15 + Math.random() * 35;
+                const speed = 0.005 + Math.random() * 0.015;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const strokeWidth = 1 + Math.random() * 2;
+
+                waveLines.push(new WaveLine(baseY, frequency, amplitude, speed, color, strokeWidth));
+            }
+
+            // Добавляем дополнительные тонкие линии для плотности
+            for (let i = 0; i < 30; i++) {
+                const baseY = Math.random() * tameCanvas.height;
+                const frequency = 2 + Math.random() * 6;
+                const amplitude = 10 + Math.random() * 20;
+                const speed = 0.003 + Math.random() * 0.01;
+                const color = colors[Math.floor(Math.random() * colors.length)].replace(/[\d.]+\)$/g, '0.2)');
+                const strokeWidth = 0.5 + Math.random();
+
+                waveLines.push(new WaveLine(baseY, frequency, amplitude, speed, color, strokeWidth));
+            }
+
+            function animateTameWaves() {
+                ctx.clearRect(0, 0, tameCanvas.width, tameCanvas.height);
+
+                waveLines.forEach(line => {
+                    line.update();
+                    line.draw();
+                });
+
+                requestAnimationFrame(animateTameWaves);
+            }
+
+            animateTameWaves();
+
+            // Интерактивность - реакция на движение мыши
+            let mouseX = 0;
+            let mouseY = 0;
+            tameCanvas.addEventListener('mousemove', (e) => {
+                const rect = tameCanvas.getBoundingClientRect();
+                mouseX = e.clientX - rect.left;
+                mouseY = e.clientY - rect.top;
+
+                // Влияем на близлежащие линии
+                waveLines.forEach(line => {
+                    const distance = Math.abs(line.baseY - mouseY);
+                    if (distance < 100) {
+                        const influence = (100 - distance) / 100;
+                        line.speed = (0.005 + Math.random() * 0.015) * (1 + influence);
+                    }
+                });
+            });
+        }
+
         // Интерактивность с навигационными ссылками
-        const navLinks = document.querySelectorAll('.nav-links a');
-        navLinks.forEach(link => {
+        const navLinksHover = document.querySelectorAll('.nav-links a');
+        for (const link of navLinksHover) {
             link.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-2px)';
             });
             link.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
             });
-        });
+        }
 
         // Добавляем интерактивность skill badges
         document.querySelectorAll('.skill-badge').forEach((badge, index) => {
